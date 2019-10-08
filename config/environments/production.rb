@@ -91,4 +91,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  # for heroku 
+  config.assets.initialize_on_precompile = false
+
+# added per devise instructions 
+  config.action_mailer.default_url_options = { host: 'https://stormy-reaches-63691.herokuapp.com/'}
 end
