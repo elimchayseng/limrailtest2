@@ -6,11 +6,14 @@
 	 <% if user_signed_in? %> 
 	 <p> Thanks for being one of our friends</p>
 	<%= link_to "Reserve Now!", home_reserve_path, class: 'btn btn-danger alpha' %>
-	<%= link_to "Leave a Note!", root_path, class: 'btn btn-info alpha' %>
+	<%= link_to "Leave a Note!", new_post_path, class: 'btn btn-info alpha' %>
+	<%= link_to "See Guestbook!", posts_path, class: 'btn btn-default alpha' %>
 
 	<%else%> 
 	<%= link_to "Login - Welcome Back Fam", new_user_session_path, class: 'btn btn-danger alpha' %>
 	<%= link_to "Sign Up to Reserve Today!", new_user_registration_path, class: 'btn btn-primary alpha' %>
+	<%= link_to "See Notes from Previous Guests!", posts_path, class: 'btn btn-info alpha' %>
+
 
 <% end %> 
 
