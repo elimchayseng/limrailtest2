@@ -6,18 +6,25 @@
     <div class="container">
       <div class="navbar-header">
 
-        <a href="/home/index" class="navbar-brand">AirBnBarrington</a>
+        <%= link_to "AirBnBarrington", root_path, class: "navbar-brand" %> 
+
       </div>
 
       <div class="navbar-collapse collapse" id="navbar">
 
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav navbar-right">
           <li> <%= link_to 'Home', root_path%><li>
-    		  <li> <%= link_to 'About Us!!', home_about_path %><li>
-          <li> <%= link_to "Login", new_user_session_path%><li>
-          <li><%= link_to "Join", new_user_registration_path %><li>
+          <li> <%= link_to 'About Us!!', home_about_path %><li>
+        
+         <% if user_signed_in? %> 
+            <li> <%= link_to "Edit Profile", edit_user_registration_path%><li> 
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %><li>
 
 
+        <% else %>  
+            <li> <%= link_to "Login", new_user_session_path%><li>
+            <li><%= link_to "Join", new_user_registration_path %><li>
+        <% end %> 
         </ul>
 
       </div>
