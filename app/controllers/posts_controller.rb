@@ -70,14 +70,14 @@ before_action :authenticate_user!, except: [:index, :show]
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_post
+      def set_post
       @post = Post.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:description)
     end
+
 
 
  def correct_user
