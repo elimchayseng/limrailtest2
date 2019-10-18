@@ -2,7 +2,9 @@
 
 <p>
   <strong>Description:</strong>
-  <%= image_tag @post.image %>
+  <br>
+  <%= image_tag @post.image.variant(resize: "300x300") %>
+<br>
   <%= @post.description %>
 </p>
 <%= link_to 'Edit', edit_post_path(@post) %> |
